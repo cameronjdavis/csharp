@@ -1,7 +1,7 @@
 namespace NetCamerond.Skillz.DesignPatterns;
 public class DecoratorExample : IDecorator
 {
-    private IDecorator decorator;
+    private readonly IDecorator decorator;
     public DecoratorExample(IDecorator decorator)
     {
         this.decorator = decorator;
