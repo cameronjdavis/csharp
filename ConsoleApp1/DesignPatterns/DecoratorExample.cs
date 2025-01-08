@@ -1,14 +1,11 @@
 namespace NetCamerond.Skillz.DesignPatterns;
-public class DecoratorExample : IDecorator
+public class DecoratorExample(IDecorator decorator) : IDecorator
 {
-    private readonly IDecorator decorator;
-    public DecoratorExample(IDecorator decorator)
-    {
-        this.decorator = decorator;
-    }
+    public bool IsWorkDone {get; private set;} = false;
+
     public void DoWork()
     {
-        this.decorator.DoWork();
-        // todo do more work
+        decorator.DoWork();
+        this.IsWorkDone = true;
     }
 }

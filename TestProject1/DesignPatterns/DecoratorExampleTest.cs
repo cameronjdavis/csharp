@@ -16,4 +16,11 @@ public class DecoratorExampleTest
         this.subject.DoWork();
         this.decorator.Verify(x => x.DoWork(), Times.Once());
     }
+    [Fact]
+    public void MarkWorkDone()
+    {
+        Assert.False(this.subject.IsWorkDone);
+        this.subject.DoWork();
+        Assert.True(this.subject.IsWorkDone);
+    }
 }
